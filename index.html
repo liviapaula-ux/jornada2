@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio de Benefícios iFood</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f9fafb; }
+        .ifood-red { color: #EA1D2C; }
+        .ifood-bg-red { background-color: #EA1D2C; }
+        .ifood-yellow { color: #F6D000; }
+        .card-hover:hover { transform: translateY(-4px); transition: all 0.3s ease; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header class="ifood-bg-red text-white py-10 px-6 shadow-lg">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div>
+                <h1 class="text-4xl font-bold mb-2">Cardápio de Benefícios iFood 💛</h1>
+                <p class="text-lg opacity-90">Tudo o que você precisa saber sobre as vantagens de ser um FoodLover.</p>
+            </div>
+            <div class="mt-6 md:mt-0 bg-white/20 p-4 rounded-xl backdrop-blur-sm">
+                <span class="block text-sm uppercase font-semibold">Status do Sistema</span>
+                <span class="text-xl font-bold">Vigência Atual 2024/2025</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="sticky top-0 bg-white shadow-md z-50">
+        <div class="max-w-6xl mx-auto flex overflow-x-auto space-x-6 px-6 py-4 scrollbar-hide">
+            <button onclick="showTab('parcerias')" class="tab-btn font-semibold px-4 py-2 text-gray-500 border-b-2 border-transparent hover:text-red-600 active-tab" id="btn-parcerias">Parcerias</button>
+            <button onclick="showTab('familia')" class="tab-btn font-semibold px-4 py-2 text-gray-500 border-b-2 border-transparent hover:text-red-600" id="btn-familia">Estilo de Vida e Família</button>
+            <button onclick="showTab('flexiveis')" class="tab-btn font-semibold px-4 py-2 text-gray-500 border-b-2 border-transparent hover:text-red-600" id="btn-flexiveis">Benefícios Flexíveis</button>
+            <button onclick="showTab('regras')" class="tab-btn font-semibold px-4 py-2 text-gray-500 border-b-2 border-transparent hover:text-red-600" id="btn-regras">Regras & Prazos</button>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto p-6">
+
+        <!-- Tab: Parcerias -->
+        <section id="parcerias" class="tab-content active space-y-8">
+            <h2 class="text-2xl font-bold border-l-4 border-red-600 pl-4">Parcerias Estratégicas</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Stay (NOVO) -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-2 border-blue-50 card-hover">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="bg-blue-600 p-3 rounded-full text-white font-bold">ST</div>
+                        <h3 class="text-xl font-bold">Stay</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-4">Consultoria financeira personalizada via videochamada e diagnóstico completo.</p>
+                    <ul class="space-y-2 text-sm">
+                        <li>• Conteúdo educativo via WhatsApp</li>
+                        <li>• Fundos de investimento opcionais com condições diferenciadas</li>
+                        <li class="bg-blue-50 p-2 rounded mt-2 font-bold text-blue-700">💰 Custo: Zero para o FoodLover!</li>
+                    </ul>
+                </div>
+
+                <!-- Wellhub -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 card-hover col-span-1 lg:col-span-2">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="bg-orange-100 p-3 rounded-full text-orange-600 font-bold">WH</div>
+                        <h3 class="text-xl font-bold">Wellhub (ex-Gympass)</h3>
+                    </div>
+                    <p class="text-sm mb-4">Acesso à rede de +25.000 academias e suporte nutricional.</p>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-[10px] md:text-xs">
+                        <div class="bg-gray-50 p-2 rounded"><strong>Digital:</strong> R$ 0,00</div>
+                        <div class="bg-gray-50 p-2 rounded"><strong>Starter:</strong> R$ 39,99</div>
+                        <div class="bg-gray-50 p-2 rounded"><strong>Basic:</strong> R$ 69,99</div>
+                        <div class="bg-gray-50 p-2 rounded"><strong>Basic+:</strong> R$ 99,99</div>
+                        <div class="bg-gray-50 p-2 rounded"><strong>Silver:</strong> R$ 149,99</div>
+                        <div class="bg-gray-50 p-2 rounded"><strong>Silver+:</strong> R$ 199,99</div>
+                        <div class="bg-gray-50 p-2 rounded"><strong>Gold:</strong> R$ 319,99</div>
+                        <div class="bg-gray-50 p-2 rounded"><strong>Gold+:</strong> R$ 439,99</div>
+                        <div class="bg-gray-50 p-2 rounded"><strong>Platinum:</strong> R$ 599,99</div>
+                        <div class="bg-gray-50 p-2 rounded"><strong>Diamond:</strong> R$ 699,99</div>
+                        <div class="bg-gray-50 p-2 rounded"><strong>Diamond+:</strong> R$ 779,99</div>
+                    </div>
+                </div>
+
+                <!-- Vida Link -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 card-hover">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="bg-green-100 p-3 rounded-full text-green-600 font-bold">VL</div>
+                        <h3 class="text-xl font-bold">Vida Link Medicamentos</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm">
+                        <li>• Subsídio de 50% para crônicos, antibióticos e saúde mental</li>
+                        <li>• Limite mensal: R$ 200,00 (não cumulativo)</li>
+                        <li class="bg-green-50 p-2 rounded mt-2 font-medium">💊 Coparticipação paga no ato da compra.</li>
+                    </ul>
+                </div>
+
+                <!-- Idiomas (MOVIDO) -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 card-hover">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="bg-yellow-100 p-3 rounded-full text-yellow-600 font-bold">🌍</div>
+                        <h3 class="text-xl font-bold">Idiomas</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm">
+                        <li>• Reembolso anual para cursos</li>
+                        <li>• Inglês, Espanhol e outros</li>
+                        <li class="bg-yellow-50 p-2 rounded mt-2 font-bold">💰 Até R$ 3.600,00 por ano.</li>
+                    </ul>
+                </div>
+
+                <!-- Leggal -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 card-hover">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full text-blue-600 font-bold">LG</div>
+                        <h3 class="text-xl font-bold">Leggal</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm">
+                        <li>• Consultas jurídicas ilimitadas</li>
+                        <li>• Suporte para diversas áreas do direito</li>
+                        <li class="bg-blue-50 p-2 rounded mt-2">⚖️ Gratuito para consultas básicas.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab: Estilo de Vida e Família -->
+        <section id="familia" class="tab-content space-y-8">
+            <div class="bg-yellow-50 p-8 rounded-3xl border border-yellow-200">
+                <h2 class="text-3xl font-bold mb-4">Estilo de Vida e Família 💛</h2>
+                <p class="text-lg mb-6">Políticas e apoios pensados para diferentes fases da jornada, reconhecendo que a vida muda e o iFood caminha junto com você.</p>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white p-5 rounded-2xl shadow-sm border border-yellow-100">
+                        <span class="text-2xl mb-2 block">🤱</span>
+                        <h4 class="font-bold">Licença Maternidade</h4>
+                        <p class="text-sm text-gray-600">180 dias de acolhimento e conexão.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl shadow-sm border border-yellow-100">
+                        <span class="text-2xl mb-2 block">👨‍🍼</span>
+                        <h4 class="font-bold">Licença Paternidade</h4>
+                        <p class="text-sm text-gray-600">60 dias de presença e cuidado.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl shadow-sm border border-yellow-100">
+                        <span class="text-2xl mb-2 block">🎂</span>
+                        <h4 class="font-bold">Folga Aniversário</h4>
+                        <p class="text-sm text-gray-600">Folga no dia ou no mês (negociado).</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl shadow-sm border border-yellow-100">
+                        <span class="text-2xl mb-2 block">📦</span>
+                        <h4 class="font-bold">Folga Mudança</h4>
+                        <p class="text-sm text-gray-600">3 dias de folga para quem está se mudando.</p>
+                    </div>
+                </div>
+
+                <div class="mt-8 grid md:grid-cols-2 gap-6">
+                    <div class="bg-white/70 p-6 rounded-2xl">
+                        <h3 class="font-bold mb-2 flex items-center"><span class="mr-2">🌱</span> Parentalidade</h3>
+                        <p class="text-sm text-gray-600">Apoio na chegada de filhos, adoção e cuidado com dependentes.</p>
+                    </div>
+                    <div class="bg-white/70 p-6 rounded-2xl">
+                        <h3 class="font-bold mb-2 flex items-center"><span class="mr-2">🤝</span> Acolhimento</h3>
+                        <p class="text-sm text-gray-600">Suporte em momentos sensíveis, como perdas gestacionais e questões de saúde.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab: Benefícios Flexíveis -->
+        <section id="flexiveis" class="tab-content space-y-8">
+            <h2 class="text-2xl font-bold border-l-4 border-red-600 pl-4">Ecossistema de Benefícios Flexíveis</h2>
+            
+            <!-- Compulsórios Detalhados -->
+            <div class="bg-white p-6 rounded-2xl border-2 border-red-100 shadow-sm">
+                <h3 class="text-xl font-bold mb-6 text-red-600 flex items-center">
+                    <span class="mr-2">📌</span> Benefícios Compulsórios (Planos e Custos)
+                </h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Saúde Bradesco -->
+                    <div>
+                        <h4 class="font-bold text-gray-700 mb-3 border-b pb-1">Bradesco Saúde</h4>
+                        <ul class="text-sm space-y-2">
+                            <li class="flex justify-between"><span>Efetivo (EQ04)</span> <span class="font-bold">279 pts</span></li>
+                            <li class="flex justify-between"><span>Ideal (IDQ2)</span> <span class="font-bold">307 pts</span></li>
+                            <li class="flex justify-between"><span>Nacional (QN06)</span> <span class="font-bold">335 pts</span></li>
+                            <li class="flex justify-between"><span>Nacional Plus</span> <span class="font-bold">736 pts</span></li>
+                            <li class="flex justify-between"><span>Premium</span> <span class="font-bold">1141 pts</span></li>
+                        </ul>
+                    </div>
+                    <!-- Saúde Unimed -->
+                    <div>
+                        <h4 class="font-bold text-gray-700 mb-3 border-b pb-1">Unimed (CNU)</h4>
+                        <ul class="text-sm space-y-2">
+                            <li class="flex justify-between"><span>Estilo</span> <span class="font-bold">279 pts</span></li>
+                            <li class="flex justify-between"><span>Absoluto</span> <span class="font-bold">307 pts</span></li>
+                            <li class="flex justify-between"><span>Superior</span> <span class="font-bold">335 pts</span></li>
+                            <li class="flex justify-between"><span>Exclusivo</span> <span class="font-bold">736 pts</span></li>
+                        </ul>
+                    </div>
+                    <!-- Odonto e Alimentação -->
+                    <div>
+                        <h4 class="font-bold text-gray-700 mb-3 border-b pb-1">Outros Fixos</h4>
+                        <ul class="text-sm space-y-2">
+                            <li class="font-semibold text-gray-500 mt-2">Bradesco Odonto:</li>
+                            <li class="flex justify-between"><span>Essencial Plus</span> <span class="font-bold">12 pts</span></li>
+                            <li class="flex justify-between"><span>Essencial Top</span> <span class="font-bold">51 pts</span></li>
+                            <li class="flex justify-between"><span>Complete White</span> <span class="font-bold">80 pts</span></li>
+                            <li class="font-semibold text-gray-500 mt-4">Alimentação:</li>
+                            <li class="flex justify-between"><span>Mínimo Obrigatório</span> <span class="font-bold">810 pts</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opcionais Detalhados -->
+            <div class="bg-white p-6 rounded-2xl border-2 border-blue-100 shadow-sm">
+                <h3 class="text-xl font-bold mb-6 text-blue-600 flex items-center">
+                    <span class="mr-2">🎁</span> Entenda os Benefícios Opcionais
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="p-4 bg-gray-50 rounded-xl">
+                        <h4 class="font-bold mb-1">⛽ Mobilidade</h4>
+                        <p class="text-xs text-gray-600">Cartão para gastos com combustível e transporte. Mín. 20 pts (1 pt = R$1,00).</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-xl">
+                        <h4 class="font-bold mb-1">🎭 Cultura</h4>
+                        <p class="text-xs text-gray-600">Valor fixo de R$ 50 para cinema, teatro, livros e shows. Não alterável.</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-xl">
+                        <h4 class="font-bold mb-1">💊 Farmácia</h4>
+                        <p class="text-xs text-gray-600">Crédito extra para compra de medicamentos. Mín. 20 pts (1 pt = R$1,00).</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-xl">
+                        <h4 class="font-bold mb-1">✈️ Plano Viagem</h4>
+                        <p class="text-xs text-gray-600">Pontos convertidos para uso em lazer e viagens. Mín. 20 pts (1 pt = R$1,00).</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-xl">
+                        <h4 class="font-bold mb-1">🐾 Plano Pet (MeuPet)</h4>
+                        <p class="text-xs text-gray-600">Assistência veterinária para cães e gatos. De 20 a 320 pts conforme plano.</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-xl">
+                        <h4 class="font-bold mb-1">🔄 Reembolso Flex</h4>
+                        <p class="text-xs text-gray-600">Reembolsa gastos como faculdade, academia ou médicos não cobertos. Cumulativo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab: Regras & Prazos -->
+        <section id="regras" class="tab-content space-y-8">
+            <h2 class="text-2xl font-bold border-l-4 border-red-600 pl-4 text-red-600 uppercase tracking-wider">Janelas de Escolha & Regras Críticas</h2>
+            
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Tipos de Eleição -->
+                <div class="space-y-4">
+                    <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-yellow-400">
+                        <h3 class="font-bold text-lg mb-2">🚀 Admissão (Bem-vindo!)</h3>
+                        <p class="text-sm text-gray-600 mb-2">Aberto para todos os FoodLovers no dia do início de sua jornada.</p>
+                        <span class="text-xs font-bold bg-yellow-100 px-2 py-1 rounded">Prazo: 5 dias úteis</span>
+                        <p class="text-xs text-red-600 mt-2 font-bold">⚠️ Única chance de escolher sua operadora de saúde (Bradesco vs Unimed)!</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-red-600">
+                        <h3 class="font-bold text-lg mb-2">📅 Geral (Anual)</h3>
+                        <p class="text-sm text-gray-600 mb-2">Possibilidade de todos revisarem suas escolhas, obedecendo regras de permanência ou condições da campanha.</p>
+                        <span class="text-xs font-bold bg-red-100 px-2 py-1 rounded">Prazo: 7 dias</span>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-gray-400">
+                        <h3 class="font-bold text-lg mb-2">🌓 Parcial (Semestral)</h3>
+                        <p class="text-sm text-gray-600 mb-2">Revisão de alguns benefícios. Não permite trocar Saúde, Odonto, Vida e Pet.</p>
+                        <span class="text-xs font-bold bg-gray-100 px-2 py-1 rounded">Prazo: 7 dias</span>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-blue-500">
+                        <h3 class="font-bold text-lg mb-2">📈 Promoção</h3>
+                        <p class="text-sm text-gray-600 mb-2">Aberto para pessoas promovidas com alteração de grade, para realocar os novos pontos ganhos.</p>
+                        <span class="text-xs font-bold bg-blue-100 px-2 py-1 rounded">Prazo: 3 dias (Livre de carências)</span>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-purple-500">
+                        <h3 class="font-bold text-lg mb-2">🏠 Familiar (Eventos de Vida)</h3>
+                        <p class="text-sm text-gray-600 mb-2">Eleição para readequação da situação familiar (inclusão/exclusão de dependentes).</p>
+                        <span class="text-xs font-bold bg-purple-100 px-2 py-1 rounded">Prazo: 7 dias</span>
+                        <div class="mt-2 text-[10px] text-gray-500 flex flex-wrap gap-2">
+                            <span>Casamento</span> | <span>Nascimento</span> | <span>Adoção</span> | <span>Divórcio</span> | <span>Falecimento</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Regras de Permanência -->
+            <div class="bg-gray-800 text-white p-8 rounded-3xl shadow-xl">
+                <h3 class="text-xl font-bold mb-6 flex items-center"><span class="mr-2">⚖️</span> Regras Críticas de Permanência</h3>
+                <div class="grid md:grid-cols-2 gap-12 text-sm">
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-red-600 p-2 rounded mr-4">⬆️</div>
+                            <div>
+                                <p class="font-bold">Upgrade de Plano (Saúde)</p>
+                                <p class="opacity-70 italic">Permanência mínima de 12 meses no plano atual antes de subir um nível.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-red-600 p-2 rounded mr-4">⬇️</div>
+                            <div>
+                                <p class="font-bold">Downgrade de Plano (Saúde)</p>
+                                <p class="opacity-70 italic">Permanência mínima de 24 meses antes de reduzir o nível do plano.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-blue-600 p-2 rounded mr-4">🐾</div>
+                            <div>
+                                <p class="font-bold">Plano Pet</p>
+                                <p class="opacity-70 italic">Exige permanência de 1 ano para qualquer nova alteração após a escolha.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-yellow-600 p-2 rounded mr-4">🚫</div>
+                            <div>
+                                <p class="font-bold">Troca de Operadora</p>
+                                <p class="opacity-70 italic">Não é permitido trocar de Bradesco para Unimed (ou vice-versa) após a admissão.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-900 text-white py-12 px-6 mt-12">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <p class="text-xl font-bold mb-2">iFood - Benefícios 🍔</p>
+                <p class="text-gray-400 text-sm">Este guia interativo consolida as políticas de RH. Lembre-se: os pontos de dependentes não podem ser usados para outros benefícios!</p>
+            </div>
+            <div class="text-right">
+                <p class="text-gray-400 text-sm italic">"Alimentamos o futuro, cuidando do presente."</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('text-red-600', 'border-red-600');
+                btn.classList.add('text-gray-500', 'border-transparent');
+            });
+            const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.classList.add('text-red-600', 'border-red-600');
+            activeBtn.classList.remove('text-gray-500', 'border-transparent');
+
+            window.scrollTo({ top: 150, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
